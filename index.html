@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cocoon Connect | Farmer Portal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="#overview" class="brand">
+        <span class="brand-mark">CC</span>
+        <span
+          >Cocoon<span class="brand-accent">Connect</span>
+          <small>FARMER PORTAL</small>
+        </span>
+      </a>
+
+      <nav>
+        <a href="#overview">Overview</a>
+        <a href="#yourCrops">Your Crops</a>
+        <a href="#market">Market Report</a>
+        <a href="#upload">Add Cocoon</a>
+      </nav>
+
+      <button class="outline-btn" id="helpBtn" type="button">Help</button>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="overview">
+        <div class="hero-copy">
+          <p class="eyebrow">A BETTER WAY TO SELL COCOONS</p>
+          <h1>
+            Your cocoon.<br />Your quality.<br /><em>Your fair price.</em>
+          </h1>
+          <p>
+            Upload your cocoon photos, view a preliminary quality estimate, and
+            manage your cocoon listings with Cocoon Connect.
+          </p>
+          <div class="hero-actions">
+            <a href="#upload" class="primary-btn">List Your Cocoon →</a>
+            <a href="#market" class="text-link">View Market Report</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-card-top">
+            <span>Indicative Market Rate</span>
+            <span class="status-pill">Demo Rate</span>
+          </div>
+          <div class="hero-rate">₹520 <small>/ kg</small></div>
+          <p class="rate-change">Sample market reference</p>
+          <div class="market-bars">
+            <span style="height: 35%"></span>
+            <span style="height: 48%"></span>
+            <span style="height: 42%"></span>
+            <span style="height: 65%"></span>
+            <span style="height: 55%"></span>
+            <span style="height: 75%"></span>
+            <span style="height: 90%"></span>
+          </div>
+          <p class="rate-note">
+            Actual rates depend on cocoon type, quality and market conditions.
+          </p>
+        </div>
+      </section>
+
+      <!-- DASHBOARD STATISTICS -->
+      <section class="stats-grid">
+        <article class="stat-card">
+          <span class="stat-icon">₹</span>
+          <div>
+            <p>Indicative Market Rate</p>
+            <strong>₹520/kg</strong>
+            <small>Demo rate</small>
+          </div>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-icon">◉</span>
+          <div>
+            <p>Quality Status</p>
+            <strong id="qualityStatus">Not checked</strong>
+            <small>Upload a photo</small>
+          </div>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-icon">▤</span>
+          <div>
+            <p>Your Listed Stock</p>
+            <strong id="listedStock">0 kg</strong>
+            <small>Total saved quantity</small>
+          </div>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-icon">▣</span>
+          <div>
+            <p>Your Listings</p>
+            <strong id="totalListings">0</strong>
+            <small>Saved listings</small>
+          </div>
+        </article>
+      </section>
+
+      <!-- YOUR CROPS -->
+      <section class="section crops-section" id="yourCrops">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">YOUR FARMER DASHBOARD</p>
+            <h2>Your Crops</h2>
+            <p class="section-subtitle">
+              Your saved cocoon listings and price requests.
+            </p>
+          </div>
+          <span class="updated-label" id="cropCount">0 listings</span>
+        </div>
+
+        <div class="your-crops-grid" id="yourCropsGrid">
+          <div class="empty-crops panel">
+            <div class="empty-icon">▧</div>
+            <h3>No crops saved yet</h3>
+            <p>
+              Upload cocoon photos, enter your details and save your first
+              listing.
+            </p>
+            <a href="#upload" class="primary-btn">Add Your First Crop →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- MARKET REPORT -->
+      <section class="section" id="market">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">MARKET INTELLIGENCE</p>
+            <h2>Market Report</h2>
+            <p class="section-subtitle">Sample indicative cocoon prices.</p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-heading">
+            <h3>Indicative Cocoon Prices</h3>
+            <span class="tag">Per kg</span>
+          </div>
+
+          <div class="rate-table">
+            <div class="rate-row table-head">
+              <span>Cocoon Category</span>
+              <span>Indicative Rate</span>
+              <span>Movement</span>
+            </div>
+
+            <div class="rate-row">
+              <span><b>Crossbreed</b><small>Commercial lot</small></span>
+              <b>₹480–520</b>
+              <span class="positive">↑ 2.1%</span>
+            </div>
+
+            <div class="rate-row">
+              <span><b>CB / Improved</b><small>Good uniformity</small></span>
+              <b>₹500–550</b>
+              <span class="positive">↑ 1.4%</span>
+            </div>
+
+            <div class="rate-row">
+              <span><b>Bivoltine</b><small>Premium category</small></span>
+              <b>₹550–620</b>
+              <span class="positive">↑ 3.0%</span>
+            </div>
+          </div>
+
+          <p class="disclaimer">
+            Fictional demo rates only, not live market prices.
+          </p>
+        </div>
+      </section>
+
+      <!-- FARMER LISTING FORM -->
+      <section class="section" id="upload">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">CREATE A LISTING</p>
+            <h2>Share Your Cocoon Details</h2>
+            <p class="section-subtitle">
+              Upload photos and provide your harvest information.
+            </p>
+          </div>
+        </div>
+
+        <div class="form-layout">
+          <form class="panel listing-form" id="listingForm">
+            <div class="form-title">
+              <span class="step">01</span>
+              <div>
+                <h3>Harvest Information</h3>
+                <p>Enter your cocoon harvest details.</p>
+              </div>
+            </div>
+
+            <label class="field-label"
+              >Upload Cocoon Images <span class="required">*</span></label
+            >
+
+            <label class="upload-box" for="cocoonImages">
+              <span class="upload-icon">↑</span>
+              <b>Click to upload cocoon images</b>
+              <small>JPG, PNG, WEBP · Maximum 5 images · 5 MB each</small>
+              <input
+                type="file"
+                id="cocoonImages"
+                accept="image/jpeg,image/png,image/webp"
+                multiple
+              />
+            </label>
+
+            <div class="preview-grid" id="imagePreview"></div>
+
+            <div class="form-grid">
+              <div>
+                <label class="field-label" for="cocoonType">Cocoon Type</label>
+                <select id="cocoonType" required>
+                  <option value="">Select type</option>
+                  <option value="Crossbreed">Crossbreed</option>
+                  <option value="CB / Improved">CB / Improved</option>
+                  <option value="Bivoltine">Bivoltine</option>
+                  <option value="Other">Other / Not sure</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="field-label" for="quantity"
+                  >Available Quantity (kg)</label
+                >
+                <input
+                  type="number"
+                  id="quantity"
+                  min="1"
+                  step="0.5"
+                  placeholder="Example: 50"
+                  required
+                />
+              </div>
+
+              <div>
+                <label class="field-label" for="harvestDate"
+                  >Harvest Date</label
+                >
+                <input type="date" id="harvestDate" required />
+              </div>
+
+              <div>
+                <label class="field-label" for="expectedRate"
+                  >Your Expected Rate (₹/kg)</label
+                >
+                <input
+                  type="number"
+                  id="expectedRate"
+                  min="1"
+                  placeholder="Example: 550"
+                  required
+                />
+              </div>
+            </div>
+
+            <label class="field-label" for="notes">
+              Additional Details <span class="optional">Optional</span>
+            </label>
+            <textarea
+              id="notes"
+              rows="3"
+              placeholder="Enter details about your harvest..."
+            ></textarea>
+
+            <div class="form-title location-title">
+              <span class="step">02</span>
+              <div>
+                <h3>Pickup Location</h3>
+                <p>Provide your location for cocoon collection.</p>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div>
+                <label class="field-label" for="village">Village / Town</label>
+                <input
+                  type="text"
+                  id="village"
+                  placeholder="Enter village"
+                  required
+                />
+              </div>
+
+              <div>
+                <label class="field-label" for="district">District</label>
+                <input
+                  type="text"
+                  id="district"
+                  placeholder="Enter district"
+                  required
+                />
+              </div>
+
+              <div>
+                <label class="field-label" for="pincode">PIN Code</label>
+                <input
+                  type="text"
+                  id="pincode"
+                  inputmode="numeric"
+                  pattern="[0-9]{6}"
+                  maxlength="6"
+                  placeholder="6-digit PIN"
+                  required
+                />
+              </div>
+
+              <div>
+                <label class="field-label" for="phone">Contact Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  inputmode="numeric"
+                  pattern="[0-9]{10}"
+                  maxlength="10"
+                  placeholder="10-digit mobile number"
+                  required
+                />
+              </div>
+            </div>
+
+            <label class="check-line">
+              <input type="checkbox" id="pickup" checked />
+              <span>
+                <b>I am interested in Cocoon Connect doorstep pickup</b>
+                <small
+                  >Pickup availability and charges will be confirmed by our
+                  team.</small
+                >
+              </span>
+            </label>
+
+            <button class="primary-btn submit-btn" type="submit">
+              Save Cocoon Listing →
+            </button>
+
+            <p class="form-footnote">
+              Demo only: Listing data is stored temporarily in this browser
+              session.
+            </p>
+          </form>
+
+          <!-- QUALITY CHECK AND FARMER PRICE REQUEST -->
+          <aside class="panel quality-panel" id="quality">
+            <div class="quality-heading">
+              <span class="quality-icon">✧</span>
+              <div>
+                <p class="eyebrow">PRELIMINARY ASSESSMENT</p>
+                <h3>Cocoon Quality Check</h3>
+              </div>
+            </div>
+
+            <p>
+              Upload cocoon photos to receive a preliminary sample quality
+              result and indicative rate.
+            </p>
+
+            <div class="quality-steps">
+              <div>
+                <span>1</span>
+                <p>
+                  <b>Upload Photos</b><small>Upload clear cocoon images.</small>
+                </p>
+              </div>
+
+              <div>
+                <span>2</span>
+                <p>
+                  <b>Automatic Demo Assessment</b
+                  ><small>See a sample quality grade and rate.</small>
+                </p>
+              </div>
+
+              <div>
+                <span>3</span>
+                <p>
+                  <b>Physical Verification</b
+                  ><small>Final grade requires actual inspection.</small>
+                </p>
+              </div>
+            </div>
+
+            <div class="analysis-status" id="analysisStatus">
+              Upload a cocoon photo to start the preliminary demo assessment.
+            </div>
+
+            <div class="quality-result" id="qualityResult">
+              <span class="result-placeholder">
+                Your indicative demo rate will appear here after photo upload.
+              </span>
+            </div>
+
+            <!-- FARMER REQUESTS A PRICE -->
+            <div class="farmer-price-request">
+              <h4>Request Your Expected Price</h4>
+
+              <p>
+                Not satisfied with the indicative rate? Enter your expected
+                price and reason. Our team will review your request.
+              </p>
+
+              <label for="farmerRequestedRate"
+                >Your Requested Price (₹ per kg)</label
+              >
+
+              <input
+                type="number"
+                id="farmerRequestedRate"
+                min="1"
+                step="1"
+                placeholder="Example: 560"
+              />
+
+              <label for="farmerRequestReason"
+                >Reason for requesting this price</label
+              >
+
+              <textarea
+                id="farmerRequestReason"
+                placeholder="Explain why you expect this rate..."
+              ></textarea>
+
+              <p class="request-help">
+                Both fields are optional. If you enter a price, please provide a
+                reason.
+              </p>
+            </div>
+
+            <p class="disclaimer">
+              This version uses a sample result. It does not analyse image
+              pixels or use a trained AI model. Final quality and price require
+              inspection.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <!-- AVAILABILITY -->
+      <section class="section" id="availability">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">STOCK VISIBILITY</p>
+            <h2>Cocoon Availability</h2>
+            <p class="section-subtitle">Manage your stock availability.</p>
+          </div>
+        </div>
+
+        <div class="availability-panel panel">
+          <div class="availability-copy">
+            <span class="availability-icon">▣</span>
+            <div>
+              <h3>Make Your Stock Available</h3>
+              <p>Manage whether your cocoon stock is ready for enquiries.</p>
+            </div>
+          </div>
+
+          <label class="switch-wrap">
+            <span id="availabilityText">Available</span>
+            <input type="checkbox" id="availabilityToggle" checked />
+            <span class="switch"></span>
+          </label>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a href="#overview" class="brand">
+        <span class="brand-mark">CC</span>
+        <span
+          >Cocoon<span class="brand-accent">Connect</span>
+          <small>CONNECTING COCOON FARMERS TO OPPORTUNITY</small>
+        </span>
+      </a>
+      <span>Farmer-first. Quality-focused. Transparent.</span>
+    </footer>
+
+    <div class="toast" id="toast" role="status"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
